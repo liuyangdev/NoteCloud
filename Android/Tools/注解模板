@@ -1,0 +1,25 @@
+
+## 类注解
+
+/**
+ *
+ * @Program: ${PROJECT_NAME}
+ * @Description: ${description}
+ * @Author: Mr.Liu
+ * @Create: ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ *
+**/
+
+
+## 方法注解
+
+**
+ * @Description: $description$
+ $params$
+ * @Return: $returns$
+ * @Author: Mr.Liu
+ * @Date: $date$
+**/
+
+
+groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i < params.size(); i++) {result+='* @Param ' + params[i] + ((i < params.size() - 1) ? '\\n\\b' : '')}; return result", methodParameters())
